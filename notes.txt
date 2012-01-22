@@ -1,0 +1,21 @@
+Create a controller
+	rails generate controller ControllerName new
+
+Create a model
+	rails generate model ModelName attributename:attributetype
+
+Run a migration
+	bundle exec rake db:migrate
+	
+attr_accessible
+	Tells app which attributes are accessible through the site
+	attr_accessible :name, :email
+	
+validate an attribute
+	validates :attrname, :presence => true
+	
+run server in production
+	rails server --environment production
+
+migrate db to production db
+	bundle exec rake db:migrate RAILS_ENV=production
