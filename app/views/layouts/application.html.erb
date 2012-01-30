@@ -9,7 +9,10 @@
 		<%= render 'layouts/header' %>
     	<div class="container">
       		<section class="round">
-        		<%= yield %>
+        		<% flash.each do |key, value| %>
+				<div id= "flash" class="flash <%= key %>"><%= value %></div>
+				<% end %>
+				<%= yield %>
       		</section>
 			<%= render 'layouts/footer'%>
     	</div>

@@ -5,9 +5,11 @@
         <%= @user.name %>
       </h1>
     </td>
-    <td class="sidebar round">
+    <td>
       <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to user_path(@user), @user %>
+      <strong>Email</strong> <%= @user.email %>  
     </td>
   </tr>
 </table>
+
+<!--<%= link_to user_path(@user), @user %>-->
