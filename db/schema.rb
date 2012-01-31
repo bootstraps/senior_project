@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120124022248) do
+ActiveRecord::Schema.define(:version => 20120131052110) do
+
+  create_table "leagues", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leagues", ["name"], :name => "index_leagues_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -20,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120124022248) do
     t.datetime "updated_at"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.boolean  "admin",              :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,0 +1,13 @@
+<h1>Create League</h1>
+</br>
+
+<%= form_for(@league) do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<div class="field">
+    	<%= f.label :name %><br />
+    	<%= f.text_field :name %>
+  	</div>
+  	<div class="actions">
+    	<%= f.submit "Create" %>
+  	</div>
+<% end %>

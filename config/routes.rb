@@ -1,12 +1,15 @@
 PokerLeague::Application.routes.draw do
+  get "leagues/new"
+
   resources :users
+  resources :leagues
   resources :sessions, :only => [:new, :create, :destroy]
   
   root :to => 'pages#home'
   
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
-  match 'signout',  :to => 'sessions#destroy'
+  match '/signout', :to => 'sessions#destroy'
   match "/contact", :to => 'pages#contact'
   match "/about",   :to => 'pages#about'
   match "/help",    :to => 'pages#help'
