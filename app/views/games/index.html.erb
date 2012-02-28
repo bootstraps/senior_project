@@ -1,0 +1,19 @@
+<h1>Surveys</h1>
+
+<p><%= link_to "New Survey", new_game_path %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for game in @games %>
+    <tr>
+      <td><%= game.id %></td>
+      <td><%= link_to "Show", game %></td>
+      <td><%= link_to "Edit", edit_game_path(game) %></td>
+      <td><%= button_to "Destroy", game, :confirm => 'Are you sure?',
+				:method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+

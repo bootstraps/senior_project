@@ -1,0 +1,20 @@
+<%= form_for @game do |game_form| %>
+	<%= render 'shared/error_messages', :object => game_form.object %>
+	
+  <p>
+	<%= game_form.label :game_date %><br/>
+	<%= date_select :game, :game_date %><br/>
+	<%= game_form.label :league_id %><br/>
+	<%= game_form.text_field :league_id %><br/>
+  </p>
+  <%= game_form.fields_for :game_players do |player_form| %>
+	<%= render 'shared/error_messages', :object => player_form.object %>
+	<p>
+    	<%= player_form.label :user_id %><br />
+		<%= player_form.text_field :user_id %>
+		<%= player_form.check_box :_destroy %>
+		<%= player_form.label :_destroy, "Remove User" %>
+	</p>
+  <% end %>
+  <p><%= game_form.submit %></p>
+<% end %>

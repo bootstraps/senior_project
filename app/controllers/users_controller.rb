@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
+    @game = @user.games
+    @leagueuser = LeagueUser.find_by_user_id(@user.id)
+    if !@leagueuser.nil?
+      @league = League.find_by_id(@leagueuser.league_id)
+    end
   end
   
   def new
@@ -16,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to PokerLeague.com!"
       redirect_to @user
     else
       @title = "Sign up"
@@ -40,10 +45,6 @@ class UsersController < ApplicationController
   end
   
   private
-    
-    def authenticate
-      deny_access unless signed_in?
-    end
     
     def correct_user
       @user = User.find(params[:id])

@@ -1,9 +1,41 @@
-<table class="profile" summary="Profile information">
+<table class="profile" summary="League Information">
 	<tr>
-    	<td class="main">
+    	<td id="main">
       		<h1>
         		<%= @league.name %>
       		</h1>
+			</br></br>
+			<h2 class="league_users">
+				League Users
+			</h2>	
+			<% if @league.league_users.empty? %>
+				</br>
+				No users in the <%= @league.name %> yet.
+			<% else %>
+				<table class="league_users" summary="League Users">
+			    	<%= render @league_users %>
+			  	</table>
+			<% end %>
+			</br>
+			<h2 class="league_users">
+				League Games
+			</h2>
+			<p><%= link_to "Create Game", gamecreate_path %></p>
+			<% if @games.empty? %>
+				</br>
+				No games in the <%= @league.name %> yet.
+			<% else %>
+				<table class="league_users" summary="League Users">
+			    	<%= render @games %>
+			  	</table>
+			<% end %>
     	</td>
+		<td>
+		  	<strong>ID</strong> <%= @league.id %><br />
+		  	<strong>URL</strong> <%= link_to league_path(@league), @league %><br />
+		  	<strong>Users</strong> <%= @league.league_users.count %><br />
+			<strong><%= link_to "Join League",  joinleague_path %>
+			</strong>
+		</td>
   	</tr>
 </table>

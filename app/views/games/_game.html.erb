@@ -1,0 +1,11 @@
+<tr>
+  <td class="league_users">
+	    <tr>
+	      <td><%= game.id %></td>
+	      <td><%= link_to "Show", game %></td>
+	      <td><%= link_to "Edit", edit_game_path(game) %></td>
+	      <td><%= button_to "Destroy", game, :confirm => 'Are you sure?',
+					:method => :delete %></td>
+	    </tr>
+  </td>
+</tr>

@@ -31,6 +31,12 @@ h1 {
 	text-transform: uppercase;
 	font-family: 'Lato', 'Arial', sans-serif;
 	}
+
+h2 {
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: 'Lato', 'Arial', sans-serif;
+}
 	
 p {
 	margin: 0 0 12px;
@@ -46,6 +52,10 @@ a {
 a:hover {
 	text-decoration: underline;
 	}
+
+#main {
+	width: 75%;
+}
 	
 blockquote {
 	padding: 10px 12px;
@@ -170,3 +180,42 @@ div.field, div.actions {
 #footer .menu-row span {color: #ddd; margin: 0 4px;}
 #footer .menu-row a {color: #888;}
 #footer .menu-row a:hover {border-bottom: 1px solid #888; text-decoration: none;}
+
+
+/* Leagues Index
+***********************/
+ul.leagues {
+  margin-top: 1em;
+}
+
+.leagues li {
+  list-style: none;
+}
+
+/* League_User
+***********************/
+table.league_users {
+  margin-top: 1em;
+}
+
+table.league_users tr {
+  height: 20px;
+}
+
+table.league_users tr td.gravatar {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  width: 50px;
+}
+
+table.microposts tr td.league_user {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 2px;
+}
+
+table.league_users tr td.league_user span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}

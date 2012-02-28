@@ -11,12 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131052110) do
+ActiveRecord::Schema.define(:version => 20120223083041) do
+
+  create_table "game_players", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "user_id"
+    t.integer  "place"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games", :force => true do |t|
+    t.integer  "league_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "game_date"
+  end
+
+  create_table "league_users", :force => true do |t|
+    t.integer  "league_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "leagues", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password"
   end
 
   add_index "leagues", ["name"], :name => "index_leagues_on_name", :unique => true

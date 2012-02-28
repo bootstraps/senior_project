@@ -1,0 +1,14 @@
+<h1>
+	Game <%= @game.id %>
+</h1>
+</br>
+
+<% if @game_players.empty? %>
+	No players in the <%= @game.id %>.
+<% else %>
+	<table class="league_users" summary="League Users">
+    	<%= render @game_players %>
+  	</table>
+<% end %>
+
+<p><%= link_to "Edit", edit_game_path(@game) %></p>

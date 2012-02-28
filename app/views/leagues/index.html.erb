@@ -1,0 +1,13 @@
+<h1>All Leagues</h1>
+
+<ul class="leagues">
+	<% if signed_in? %>
+		<li><%= link_to "Create League", leaguecreate_path %></li>	
+	<% end %>
+</br></br>
+	<% @leagues.each do |league| %>
+    	<li>
+      		<%= link_to league.name, league %>
+    	</li>
+  	<% end %>
+</ul>

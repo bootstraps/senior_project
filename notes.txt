@@ -19,3 +19,6 @@ run server in production
 
 migrate db to production db
 	bundle exec rake db:migrate RAILS_ENV=production
+	
+annotate model files
+	bundle exec annotate --position before
