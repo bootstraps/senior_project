@@ -1,0 +1,18 @@
+User 
+	Show place in each game.
+	Place in league
+	
+League
+	Show and arrange users by place.
+	Join league with password
+	
+Game 
+	Show and arrange users by place.
+	Allow for adding of users to game.
+	Add bounties.
+
+Overall
+	Validate access to pages.
+	Clean up page layouts.
+	Fill in learn page.
+	

@@ -12,12 +12,13 @@
 class Game < ActiveRecord::Base
   belongs_to :league
   has_many :game_players, :dependent => :destroy
-  has_many :users, :through => :game_players 
+  has_many :users, :through => :game_players
+   
   accepts_nested_attributes_for :game_players,
         :reject_if => lambda { |a| a[:user_id].blank? },
         :allow_destroy => true
   
   
   validates :league_id,   :presence   => true
-  #validates :game_date,   :presence   => true
+  validates :game_date,   :presence   => true
 end

@@ -12,6 +12,8 @@
 	<p>
     	<%= player_form.label :user_id %><br />
 		<%= player_form.text_field :user_id %>
+		<%= player_form.label :place %>
+		<%= player_form.number_field :place %>
 		<%= player_form.check_box :_destroy %>
 		<%= player_form.label :_destroy, "Remove User" %>
 	</p>

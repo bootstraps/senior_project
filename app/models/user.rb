@@ -26,7 +26,7 @@ require 'digest'
 class User < ActiveRecord::Base
   has_one :league_user, :dependent => :destroy
   has_one :league, :through => :league_user
-  has_many :game_players, :dependent => :destroy
+  has_many :game_players
   has_many :games, :through => :game_players
   
   

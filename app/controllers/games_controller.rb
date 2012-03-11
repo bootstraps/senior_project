@@ -24,7 +24,7 @@ class GamesController < ApplicationController
     @title = "Game View"
     @game = Game.find(params[:id])
     @game_players = @game.game_players
-    @users = User.find_by_id(@game_players)
+    @user = User.find_by_id(@game_players)
   end
   
   def edit
